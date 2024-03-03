@@ -6,12 +6,12 @@ public class IdleState : CharacterState
 {
     public override bool CanEnter(IState currentState)
     {
-        return !playerStateMachine.IsWalking && !playerStateMachine.IsInAir; ;
+        return !playerStateMachine.IsWalking && !playerStateMachine.IsInAir && playerStateMachine.RigidBody.gravityScale != 0;
     }
 
     public override bool CanExit()
     {
-        return playerStateMachine.IsWalking || playerStateMachine.IsInAir;
+        return playerStateMachine.IsWalking || playerStateMachine.IsInAir || playerStateMachine.RigidBody.gravityScale == 0;
     }
 
     public override void OnEnter()

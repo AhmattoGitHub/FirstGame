@@ -6,12 +6,12 @@ public class WalkingState : CharacterState
 {
     public override bool CanEnter(IState currentState)
     {
-        return playerStateMachine.IsWalking && !playerStateMachine.IsInAir;
+        return playerStateMachine.IsWalking && !playerStateMachine.IsInAir && playerStateMachine.RigidBody.gravityScale != 0;
     }
 
     public override bool CanExit()
     {
-        return !playerStateMachine.IsWalking || playerStateMachine.IsInAir;
+        return !playerStateMachine.IsWalking || playerStateMachine.IsInAir || playerStateMachine.RigidBody.gravityScale == 0;
     }
 
     public override void OnEnter()
@@ -26,7 +26,7 @@ public class WalkingState : CharacterState
 
     public override void OnFixedUpdate()
     {
-        playerStateMachine.RigidBody.transform.Translate(playerStateMachine.MaxSpeed * playerStateMachine.PlayerInputX * Time.fixedDeltaTime, 0, 0);
+        playerStateMachine.RigidBody.transform.Translate(playerStateMachine.SpeedValue * playerStateMachine.PlayerInputX * Time.fixedDeltaTime, 0, 0);
     }
 
     public override void OnUpdate()

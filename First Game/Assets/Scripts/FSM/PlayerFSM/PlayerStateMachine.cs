@@ -9,8 +9,7 @@ public class PlayerStateMachine : BaseStateMachine<CharacterState>
     [field: SerializeField] public float PlayerInputY { get; private set; }
     [field: SerializeField] public bool IsInAir { get; private set; } = false;
     [field: SerializeField] public bool IsWalking { get; private set; } = false;
-    [field: SerializeField] public int MaxSpeed { get; private set; } = 10;
-    [field: SerializeField] public int AccelerationValue { get; private set; } = 3;
+    [field: SerializeField] public int SpeedValue { get; private set; } = 10;
 
     private const int NUMBER_OF_JUMPS = 2;
     private int m_jumpCount = 0;
@@ -31,6 +30,7 @@ public class PlayerStateMachine : BaseStateMachine<CharacterState>
         base.Update();
         CheckForWASDInput();
         CheckForJumpInput();
+        UpdateGravityScale();
     }
 
     protected override void CreatePossibleStates()
@@ -39,6 +39,7 @@ public class PlayerStateMachine : BaseStateMachine<CharacterState>
         m_possibleStates.Add(new IdleState());
         m_possibleStates.Add(new WalkingState());
         m_possibleStates.Add(new InAirState());
+        m_possibleStates.Add(new ZeroGravityState());
     }
 
     protected override void FixedUpdate()
@@ -62,7 +63,7 @@ public class PlayerStateMachine : BaseStateMachine<CharacterState>
 
     private void CheckForJumpInput()
     {
-        if(Input.GetKeyDown(KeyCode.Space)) 
+        if(Input.GetKeyDown(KeyCode.Space) && RigidBody.gravityScale != 0) 
         {
             if(m_jumpCount < NUMBER_OF_JUMPS)
             {
@@ -86,5 +87,10 @@ public class PlayerStateMachine : BaseStateMachine<CharacterState>
         {
             IsInAir = true;
         }
+    }
+
+    private void UpdateGravityScale()
+    {
+        RigidBody.gravityScale = TestLevelManager.Instance.GetLevelGravityScale();
     }
 }

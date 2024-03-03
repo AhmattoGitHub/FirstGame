@@ -6,12 +6,12 @@ public class InAirState : CharacterState
 {
     public override bool CanEnter(IState currentState)
     {
-        return playerStateMachine.IsInAir == true;
+        return playerStateMachine.IsInAir == true && playerStateMachine.RigidBody.gravityScale != 0;
     }
 
     public override bool CanExit()
     {
-        return playerStateMachine.IsInAir == false;
+        return playerStateMachine.IsInAir == false || playerStateMachine.RigidBody.gravityScale == 0;
     }
 
     public override void OnEnter()
@@ -26,7 +26,7 @@ public class InAirState : CharacterState
 
     public override void OnFixedUpdate()
     {
-        playerStateMachine.RigidBody.transform.Translate(playerStateMachine.MaxSpeed * playerStateMachine.PlayerInputX * Time.fixedDeltaTime, 0, 0);
+        playerStateMachine.RigidBody.transform.Translate(playerStateMachine.SpeedValue * playerStateMachine.PlayerInputX * Time.fixedDeltaTime, 0, 0);
     }
 
     public override void OnUpdate()
