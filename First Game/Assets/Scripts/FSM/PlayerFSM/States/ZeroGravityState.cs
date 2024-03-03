@@ -2,35 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InAirState : CharacterState
+public class ZeroGravityState : CharacterState
 {
     public override bool CanEnter(IState currentState)
     {
-        return playerStateMachine.IsInAir == true;
+        throw new System.NotImplementedException();
     }
-
+     
     public override bool CanExit()
     {
-        return playerStateMachine.IsInAir == false;
+        throw new System.NotImplementedException();
     }
 
     public override void OnEnter()
     {
-        Debug.Log("Entering InAirState!");
+        throw new System.NotImplementedException();
     }
 
     public override void OnExit()
     {
-        Debug.Log("Exiting InAirState!");
+        throw new System.NotImplementedException();
     }
 
     public override void OnFixedUpdate()
     {
-        playerStateMachine.RigidBody.transform.Translate(playerStateMachine.MaxSpeed * playerStateMachine.PlayerInputX * Time.fixedDeltaTime, 0, 0);
+        throw new System.NotImplementedException();
     }
 
     public override void OnUpdate()
     {
-
+        throw new System.NotImplementedException();
     }
 }
