@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerStateMachine : BaseStateMachine<CharacterState>
@@ -13,6 +14,7 @@ public class PlayerStateMachine : BaseStateMachine<CharacterState>
 
     private const int NUMBER_OF_JUMPS = 2;
     private int m_jumpCount = 0;
+    private const int JUMP_FORCE = 10;
 
     protected override void Start()
     {
@@ -65,7 +67,7 @@ public class PlayerStateMachine : BaseStateMachine<CharacterState>
             if(m_jumpCount < NUMBER_OF_JUMPS)
             {
                 m_jumpCount++;
-                RigidBody.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
+                RigidBody.AddForce(new Vector2(0, JUMP_FORCE + (RigidBody.velocity.y * -1)),ForceMode2D.Impulse);
             }
         }
     }
