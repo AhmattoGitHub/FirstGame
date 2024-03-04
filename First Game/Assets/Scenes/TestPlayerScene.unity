@@ -240,9 +240,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_playerStateMachine: {fileID: 672518085}
-  m_offset: {x: 0, y: 0, z: -20}
+  m_offset: {x: 0, y: 0, z: -17}
   m_lerpValue: 0.1
-  m_viewDistance: 10
+  m_viewDistance: 6
 --- !u!1 &1651158745
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,7 +411,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 391935644033654401, guid: 0cdbf6762de027f49ae3c1abad896da5, type: 3}
       propertyPath: m_levelGravityScale
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 686775082720258284, guid: 0cdbf6762de027f49ae3c1abad896da5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -515,8 +515,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9097079712509029858, guid: 5ed8f3854b05b754188b5d823e4055f1, type: 3}
-      propertyPath: m_Constraints
-      value: 4
+      propertyPath: m_Mass
+      value: 0.66
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
