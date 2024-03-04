@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InAirState : CharacterState
 {
+    private float m_speed;
     public override bool CanEnter(IState currentState)
     {
         return playerStateMachine.IsInAir == true && playerStateMachine.RigidBody.gravityScale != 0;
@@ -17,6 +18,7 @@ public class InAirState : CharacterState
     public override void OnEnter()
     {
         Debug.Log("Entering InAirState!");
+        m_speed = playerStateMachine.SpeedValue * Time.fixedDeltaTime;
     }
 
     public override void OnExit()
@@ -26,7 +28,7 @@ public class InAirState : CharacterState
 
     public override void OnFixedUpdate()
     {
-        playerStateMachine.RigidBody.transform.Translate(playerStateMachine.SpeedValue * playerStateMachine.PlayerInputX * Time.fixedDeltaTime, 0, 0);
+        playerStateMachine.RigidBody.transform.Translate(m_speed* playerStateMachine.PlayerInputX, 0, 0);
     }
 
     public override void OnUpdate()

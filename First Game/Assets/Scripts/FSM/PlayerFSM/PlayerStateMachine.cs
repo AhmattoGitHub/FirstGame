@@ -68,7 +68,7 @@ public class PlayerStateMachine : BaseStateMachine<CharacterState>
             if(m_jumpCount < NUMBER_OF_JUMPS)
             {
                 m_jumpCount++;
-                RigidBody.AddForce(new Vector2(0, JUMP_FORCE + (RigidBody.velocity.y * -1)),ForceMode2D.Impulse);
+                RigidBody.AddForce(Vector2.up * (JUMP_FORCE + (RigidBody.velocity.y * -1)),ForceMode2D.Impulse);
             }
         }
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ZeroGravityState : CharacterState
 {
-    private const float m_boostForce = 500;
+    private float m_boostForce = 500 * Time.fixedDeltaTime;
     public override bool CanEnter(IState currentState)
     {
         return playerStateMachine.RigidBody.gravityScale == 0;
@@ -28,9 +28,9 @@ public class ZeroGravityState : CharacterState
     public override void OnFixedUpdate()
     {
         if (CanBoostOnX())
-            playerStateMachine.RigidBody.AddForce(new Vector2(m_boostForce * playerStateMachine.PlayerInputX * Time.fixedDeltaTime, 0));
+            playerStateMachine.RigidBody.AddForce(Vector2.right * (m_boostForce * playerStateMachine.PlayerInputX));
         if (CanBoostOnY())
-            playerStateMachine.RigidBody.AddForce(new Vector2(0, m_boostForce * playerStateMachine.PlayerInputY * Time.fixedDeltaTime));
+            playerStateMachine.RigidBody.AddForce(Vector2.up * (m_boostForce * playerStateMachine.PlayerInputY));
 
         if (playerStateMachine.RigidBody.velocity.magnitude > playerStateMachine.SpeedValue)
         {
