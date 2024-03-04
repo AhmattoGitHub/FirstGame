@@ -21,7 +21,7 @@ public class InAirState : CharacterState
 
     public override void OnExit()
     {
-        Debug.Log("Exiting InAirState!");
+
     }
 
     public override void OnFixedUpdate()
