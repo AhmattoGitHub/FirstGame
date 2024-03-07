@@ -123,6 +123,58 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &177351190
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 177351191}
+  - component: {fileID: 177351192}
+  m_Layer: 0
+  m_Name: TestPlayerPowersManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &177351191
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177351190}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 720930468}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &177351192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177351190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b60a598be2df21446a457a4510b9f41a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_playerStateMachine: {fileID: 1230297160}
+  m_acidSpitObject: {fileID: 4825711634050793204, guid: be862698caadbab419b0e6af3d1c233d, type: 3}
+  m_unlockedAcidSpit: 1
+--- !u!4 &720930468 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7398623115278278526, guid: 5ed8f3854b05b754188b5d823e4055f1, type: 3}
+  m_PrefabInstance: {fileID: 6253213040886981175}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1206856898
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,7 +568,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7398623115278278526, guid: 5ed8f3854b05b754188b5d823e4055f1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 177351191}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ed8f3854b05b754188b5d823e4055f1, type: 3}
 --- !u!1660057539 &9223372036854775807
