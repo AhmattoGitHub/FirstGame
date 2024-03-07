@@ -86,6 +86,7 @@ public class PlayerStateMachine : BaseStateMachine<CharacterState>
         if (collision.gameObject.CompareTag("Floor"))
         {
             IsInAir = true;
+            m_jumpCount = 1;
         }
     }
 
