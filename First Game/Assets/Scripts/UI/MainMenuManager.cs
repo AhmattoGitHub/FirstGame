@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class MainMenuManager : MonoBehaviour
     private GameObject m_mainMenu;
     [SerializeField]
     private GameObject m_optionsMenu;
+    [SerializeField]
+    private Toggle m_fullscreenToggle;
 
     private static MainMenuManager _instance;
 
@@ -36,7 +39,6 @@ public class MainMenuManager : MonoBehaviour
             _instance = this;
         }
     }
-
     public void StartGame()
     {
         SceneManager.LoadScene(1);
@@ -52,6 +54,18 @@ public class MainMenuManager : MonoBehaviour
     {
         m_mainMenu.SetActive(true);
         m_optionsMenu.SetActive(false);
+    }
+
+    public void ToggleFullScreen()
+    {
+        if(m_fullscreenToggle.isOn)
+        {
+            Screen.fullScreen = true;
+        }
+        else
+        {
+            Screen.fullScreen = false;
+        }
     }
 
     public void QuitGame()
