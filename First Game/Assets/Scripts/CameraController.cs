@@ -21,7 +21,7 @@ public class CameraController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        this.transform.position = Vector3.Lerp(transform.position, m_playerStateMachine.transform.position + m_offset,m_lerpValue) ;
+        this.transform.position = Vector3.Lerp(transform.position, m_playerStateMachine.RigidBody.transform.position + m_offset, m_lerpValue);
         if (m_playerStateMachine.RigidBody.gravityScale != 0)
             LookUpOrDown();
     }
