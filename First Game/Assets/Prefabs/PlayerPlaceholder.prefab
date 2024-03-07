@@ -158,8 +158,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6294063969318307561}
-  - component: {fileID: 1936632171334421254}
   - component: {fileID: 7436474761150567076}
+  - component: {fileID: 8757872101026023608}
   m_Layer: 0
   m_Name: FloorDetecter
   m_TagString: Untagged
@@ -176,14 +176,32 @@ Transform:
   m_GameObject: {fileID: 7870994821162292501}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.073, y: -0.663, z: 0}
+  m_LocalPosition: {x: 0.077, y: -0.94, z: 0}
   m_LocalScale: {x: 1.3223438, y: 0.37801757, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7398623115278278526}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!70 &1936632171334421254
-CapsuleCollider2D:
+--- !u!114 &7436474761150567076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7870994821162292501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9feae7b6678dae540b25f5c45f34021d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <RigidBody>k__BackingField: {fileID: 9097079712509029858}
+  <PlayerInputX>k__BackingField: 0
+  <PlayerInputY>k__BackingField: 0
+  <IsInAir>k__BackingField: 0
+  <IsWalking>k__BackingField: 0
+  <SpeedValue>k__BackingField: 10
+--- !u!61 &8757872101026023608
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -214,24 +232,16 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.8263682e-15, y: -0.1853939}
-  m_Size: {x: 0.50587744, y: 1.8595363}
-  m_Direction: 0
---- !u!114 &7436474761150567076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7870994821162292501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9feae7b6678dae540b25f5c45f34021d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <RigidBody>k__BackingField: {fileID: 9097079712509029858}
-  <PlayerInputX>k__BackingField: 0
-  <PlayerInputY>k__BackingField: 0
-  <IsInAir>k__BackingField: 0
-  <IsWalking>k__BackingField: 0
-  <SpeedValue>k__BackingField: 10
+  m_Offset: {x: -0.017924238, y: 0.19855273}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.05300226, y: 1.8360102}
+  m_EdgeRadius: 0
