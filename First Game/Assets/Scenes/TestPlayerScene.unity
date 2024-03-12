@@ -462,6 +462,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 391935644033654401, guid: 0cdbf6762de027f49ae3c1abad896da5, type: 3}
+      propertyPath: m_mainCamera
+      value: 
+      objectReference: {fileID: 1206856900}
+    - target: {fileID: 391935644033654401, guid: 0cdbf6762de027f49ae3c1abad896da5, type: 3}
       propertyPath: m_levelGravityScale
       value: 3
       objectReference: {fileID: 0}

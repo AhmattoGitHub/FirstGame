@@ -4,27 +4,30 @@ using UnityEngine;
 
 public class MoveAcidSpit : MonoBehaviour
 {
+    [SerializeField]
     private bool m_isDescending = false;
-    private float m_launchHeight = 15;
-
+    [SerializeField]
+    private int m_launchHeight = 15;
+    [SerializeField]
+    private float m_launchSpeed = 30;
+    [SerializeField]
+    private bool m_movedTowardsCursor = false;
     [SerializeField]
     private GameObject m_playerObject;
+    [SerializeField]
+    private bool m_movedTowardsPoint;
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     private void Update()
     {
-        if (Vector2.Distance(this.transform.position, m_playerObject.transform.position) >= m_launchHeight)
+        if (Mathf.Abs(this.transform.position.y - m_playerObject.transform.position.y) >= m_launchHeight)
         {
-            m_isDescending=true;
-            float xDistanceBetweenCursorAndSpit = Mathf.Abs(this.transform.position.x - TestPlayerPowersManager.Instance.GetClickPosition().x);
-
-            if (this.transform.position.x != TestPlayerPowersManager.Instance.GetClickPosition().x)
-                this.transform.Translate(new Vector2(xDistanceBetweenCursorAndSpit, 0));
+            m_isDescending = true;
         }
     }
 
@@ -33,16 +36,37 @@ public class MoveAcidSpit : MonoBehaviour
         if (!m_isDescending)
             LaunchToSky();
         else
+        {
+            MoveTowardsPoint();
             DescendFromSky();
+        }
     }
 
     private void LaunchToSky()
     {
-        this.transform.Translate(Vector2.up * m_launchHeight * Time.fixedDeltaTime);
+        this.transform.Translate(Vector2.up * m_launchSpeed * Time.fixedDeltaTime);
     }
 
     private void DescendFromSky()
     {
-        this.transform.Translate(Vector2.down * m_launchHeight * Time.fixedDeltaTime);
+        this.transform.Translate(Vector2.down * m_launchSpeed * Time.fixedDeltaTime);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Floor"))
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    private void MoveTowardsPoint()
+    {
+        if(!m_movedTowardsPoint)
+        {
+            float xDistanceBetweenCursorAndSpit = this.transform.position.x - TestPlayerPowersManager.Instance.GetClickPosition().x;
+            transform.Translate(Vector2.right * xDistanceBetweenCursorAndSpit);
+            m_movedTowardsPoint = true;
+        }
     }
 }

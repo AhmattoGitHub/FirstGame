@@ -15,7 +15,7 @@ public class TestPlayerPowersManager : MonoBehaviour
     [SerializeField]
     private bool m_unlockedAcidSpit = false;
 
-    private Vector2 m_clickPosition;
+    private Vector3 m_clickPosition;
 
     // Property to access the singleton instance
     public static TestPlayerPowersManager Instance
@@ -58,12 +58,14 @@ public class TestPlayerPowersManager : MonoBehaviour
         if(m_unlockedAcidSpit)
         {
             Debug.Log("Spitting acid!");
-            Instantiate(m_acidSpitObject,m_playerStateMachine.RigidBody.transform.position,m_acidSpitObject.transform.rotation);
+            Instantiate(m_acidSpitObject,m_playerStateMachine.RigidBody.transform.position,m_acidSpitObject.gameObject.transform.rotation);
         }
     }
 
     public Vector2 GetClickPosition()
     {
-        return m_clickPosition;
+        m_clickPosition.z = TestLevelManager.Instance.GetCamera().transform.position.z; // 10f is just an example, adjust based on your scene
+        Vector3 mousePositionWorld = TestLevelManager.Instance.GetCamera().ScreenToWorldPoint(m_clickPosition);
+        return mousePositionWorld;
     }
 }
