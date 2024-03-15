@@ -172,6 +172,8 @@ MonoBehaviour:
   m_bulletSpitObject: {fileID: 7101665448899606738, guid: b0fb36563fca8fc4a99204f420685946, type: 3}
   m_unlockedAcidSpit: 1
   m_unlockedBulletSpit: 1
+  m_unlockedSlam: 1
+  m_slamForce: 25
 --- !u!4 &720930468 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7398623115278278526, guid: 5ed8f3854b05b754188b5d823e4055f1, type: 3}
@@ -386,7 +388,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 7
 --- !u!212 &1651158748
 SpriteRenderer:

@@ -16,10 +16,12 @@ public class MoveAcidSpit : MonoBehaviour
     private GameObject m_playerObject;
     [SerializeField]
     private bool m_movedTowardsPoint;
+
+    private float xDistanceBetweenCursorAndSpit;
     // Start is called before the first frame update
     void Start()
     {
-        
+        xDistanceBetweenCursorAndSpit = TestPlayerPowersManager.Instance.GetClickPosition().x - this.transform.position.x;
     }
 
     // Update is called once per frame
@@ -64,7 +66,6 @@ public class MoveAcidSpit : MonoBehaviour
     {
         if(!m_movedTowardsPoint)
         {
-            float xDistanceBetweenCursorAndSpit = TestPlayerPowersManager.Instance.GetClickPosition().x - this.transform.position.x;
             transform.Translate(Vector2.right * xDistanceBetweenCursorAndSpit);
             m_movedTowardsPoint = true;
         }
