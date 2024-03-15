@@ -169,7 +169,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_playerStateMachine: {fileID: 1230297160}
   m_acidSpitObject: {fileID: 4825711634050793204, guid: be862698caadbab419b0e6af3d1c233d, type: 3}
+  m_bulletSpitObject: {fileID: 7101665448899606738, guid: b0fb36563fca8fc4a99204f420685946, type: 3}
   m_unlockedAcidSpit: 1
+  m_unlockedBulletSpit: 1
 --- !u!4 &720930468 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7398623115278278526, guid: 5ed8f3854b05b754188b5d823e4055f1, type: 3}

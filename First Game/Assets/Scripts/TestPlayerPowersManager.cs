@@ -13,7 +13,11 @@ public class TestPlayerPowersManager : MonoBehaviour
     [SerializeField]
     private GameObject m_acidSpitObject;
     [SerializeField]
+    private GameObject m_bulletSpitObject;
+    [SerializeField]
     private bool m_unlockedAcidSpit = false;
+    [SerializeField]
+    private bool m_unlockedBulletSpit = false;
 
     private Vector3 m_clickPosition;
 
@@ -51,6 +55,7 @@ public class TestPlayerPowersManager : MonoBehaviour
     private void CheckForInput()
     {
         if (Input.GetKeyDown(KeyCode.Mouse1)) { m_clickPosition = Input.mousePosition; SpitAcid(); }
+        else if(Input.GetKeyDown(KeyCode.Mouse0)) { m_clickPosition = Input.mousePosition; SpitBullet(); }
     }
 
     private void SpitAcid()
@@ -62,10 +67,20 @@ public class TestPlayerPowersManager : MonoBehaviour
         }
     }
 
+    private void SpitBullet()
+    {
+        if(m_unlockedBulletSpit)
+        {
+            Debug.Log("Spitting bullet!");
+            Instantiate(m_bulletSpitObject, m_playerStateMachine.RigidBody.transform.position, m_bulletSpitObject.gameObject.transform.rotation);
+        }
+    }
+
     public Vector2 GetClickPosition()
     {
-        m_clickPosition.z = TestLevelManager.Instance.GetCamera().transform.position.z; // 10f is just an example, adjust based on your scene
-        Vector3 mousePositionWorld = TestLevelManager.Instance.GetCamera().ScreenToWorldPoint(m_clickPosition);
+        m_clickPosition.z = TestLevelManager.Instance.GetCamera().transform.position.z * -1;
+        Vector2 mousePositionWorld = TestLevelManager.Instance.GetCamera().ScreenToWorldPoint(m_clickPosition);
+        Debug.Log(mousePositionWorld.x + " " + mousePositionWorld.y);
         return mousePositionWorld;
     }
 }

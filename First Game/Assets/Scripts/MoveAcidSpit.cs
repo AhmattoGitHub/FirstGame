@@ -64,7 +64,7 @@ public class MoveAcidSpit : MonoBehaviour
     {
         if(!m_movedTowardsPoint)
         {
-            float xDistanceBetweenCursorAndSpit = this.transform.position.x - TestPlayerPowersManager.Instance.GetClickPosition().x;
+            float xDistanceBetweenCursorAndSpit = TestPlayerPowersManager.Instance.GetClickPosition().x - this.transform.position.x;
             transform.Translate(Vector2.right * xDistanceBetweenCursorAndSpit);
             m_movedTowardsPoint = true;
         }
