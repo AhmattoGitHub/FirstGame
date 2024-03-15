@@ -60,7 +60,7 @@ public class TestPlayerPowersManager : MonoBehaviour
 
     private void SpitAcid()
     {
-        if(m_unlockedAcidSpit)
+        if(m_unlockedAcidSpit && m_playerStateMachine.PlayerInputX == 0 && !m_playerStateMachine.IsInAir)
         {
             Debug.Log("Spitting acid!");
             Instantiate(m_acidSpitObject,m_playerStateMachine.RigidBody.transform.position,m_acidSpitObject.gameObject.transform.rotation);
@@ -80,7 +80,6 @@ public class TestPlayerPowersManager : MonoBehaviour
     {
         m_clickPosition.z = TestLevelManager.Instance.GetCamera().transform.position.z * -1;
         Vector2 mousePositionWorld = TestLevelManager.Instance.GetCamera().ScreenToWorldPoint(m_clickPosition);
-        Debug.Log(mousePositionWorld.x + " " + mousePositionWorld.y);
         return mousePositionWorld;
     }
 }
