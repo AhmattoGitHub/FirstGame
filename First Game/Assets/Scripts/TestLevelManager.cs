@@ -8,6 +8,10 @@ public class TestLevelManager : MonoBehaviour
     private static TestLevelManager _instance;
     [SerializeField]
     private float m_levelGravityScale = 0;
+    [SerializeField]
+    private Camera m_mainCamera;
+    [SerializeField]
+    private GameObject m_player;
 
     // Property to access the singleton instance
     public static TestLevelManager Instance
@@ -38,5 +42,10 @@ public class TestLevelManager : MonoBehaviour
     public float GetLevelGravityScale()
     {
         return m_levelGravityScale;
+    }
+
+    public Camera GetCamera()
+    {
+        return m_mainCamera;
     }
 }
