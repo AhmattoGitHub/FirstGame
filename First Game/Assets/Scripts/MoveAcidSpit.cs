@@ -11,8 +11,6 @@ public class MoveAcidSpit : MonoBehaviour
     [SerializeField]
     private float m_launchSpeed = 30;
     [SerializeField]
-    private bool m_movedTowardsCursor = false;
-    [SerializeField]
     private GameObject m_playerObject;
     [SerializeField]
     private bool m_movedTowardsPoint;
