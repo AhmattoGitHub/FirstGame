@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyState : IState
+public class MeleeEnemyState : IState
 {
+    protected MeleeEnemyStateMachine m_meleeEnemyStateMachine;
+
     public virtual bool CanEnter(IState currentState)
     {
         throw new System.NotImplementedException();
@@ -16,26 +18,30 @@ public class EnemyState : IState
 
     public virtual void OnEnter()
     {
-        throw new System.NotImplementedException();
+
     }
 
     public virtual void OnExit()
     {
-        throw new System.NotImplementedException();
+
     }
 
     public virtual void OnFixedUpdate()
     {
-        throw new System.NotImplementedException();
+
     }
 
-    public virtual void OnStart()
+    public virtual void OnStart(MeleeEnemyStateMachine meleeEnemyStateMachine)
     {
-        throw new System.NotImplementedException();
+        m_meleeEnemyStateMachine = meleeEnemyStateMachine;
     }
 
+    public void OnStart()
+    {
+
+    }
     public virtual void OnUpdate()
     {
-        throw new System.NotImplementedException();
+
     }
 }
