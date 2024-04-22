@@ -48,4 +48,9 @@ public class TestLevelManager : MonoBehaviour
     {
         return m_mainCamera;
     }
+
+    public GameObject GetPlayer()
+    {
+        return m_player;
+    }
 }

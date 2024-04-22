@@ -304,6 +304,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9feae7b6678dae540b25f5c45f34021d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1523577525 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5037034149173665711, guid: 5ed8f3854b05b754188b5d823e4055f1, type: 3}
+  m_PrefabInstance: {fileID: 6253213040886981175}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1651158745
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,6 +476,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 391935644033654401, guid: 0cdbf6762de027f49ae3c1abad896da5, type: 3}
+      propertyPath: m_player
+      value: 
+      objectReference: {fileID: 1523577525}
+    - target: {fileID: 391935644033654401, guid: 0cdbf6762de027f49ae3c1abad896da5, type: 3}
       propertyPath: m_mainCamera
       value: 
       objectReference: {fileID: 1206856900}
@@ -549,7 +558,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4164419480074194249, guid: a3d43160ca5e4be40a102960cd4bfb10, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.75
+      value: 19.37
       objectReference: {fileID: 0}
     - target: {fileID: 4164419480074194249, guid: a3d43160ca5e4be40a102960cd4bfb10, type: 3}
       propertyPath: m_LocalPosition.y
