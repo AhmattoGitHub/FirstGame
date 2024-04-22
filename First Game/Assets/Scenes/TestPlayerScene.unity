@@ -174,11 +174,6 @@ MonoBehaviour:
   m_unlockedBulletSpit: 1
   m_unlockedSlam: 1
   m_slamForce: 25
---- !u!50 &704015262 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 3577745270149883363, guid: a3d43160ca5e4be40a102960cd4bfb10, type: 3}
-  m_PrefabInstance: {fileID: 3037913951126676448}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &720930468 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7398623115278278526, guid: 5ed8f3854b05b754188b5d823e4055f1, type: 3}
@@ -544,17 +539,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -4425053275630494674, guid: a3d43160ca5e4be40a102960cd4bfb10, type: 3}
-      propertyPath: <Rigidbody>k__BackingField
-      value: 
-      objectReference: {fileID: 704015262}
     - target: {fileID: 2744921404267535510, guid: a3d43160ca5e4be40a102960cd4bfb10, type: 3}
       propertyPath: m_Name
       value: MeleeEnemyPlaceholder
-      objectReference: {fileID: 0}
-    - target: {fileID: 3577745270149883363, guid: a3d43160ca5e4be40a102960cd4bfb10, type: 3}
-      propertyPath: m_Constraints
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4164419480074194249, guid: a3d43160ca5e4be40a102960cd4bfb10, type: 3}
       propertyPath: m_LocalPosition.x
@@ -562,7 +549,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4164419480074194249, guid: a3d43160ca5e4be40a102960cd4bfb10, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.29
+      value: -3.38
       objectReference: {fileID: 0}
     - target: {fileID: 4164419480074194249, guid: a3d43160ca5e4be40a102960cd4bfb10, type: 3}
       propertyPath: m_LocalPosition.z

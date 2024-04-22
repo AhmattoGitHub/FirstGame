@@ -158,7 +158,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!114 &-4425053275630494674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,3 +171,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58ef6a2ff45040042bab99cf36efb9f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <StartingPosition>k__BackingField: {x: 0, y: 0}
+  <Rigidbody>k__BackingField: {fileID: 3577745270149883363}
+  <ChasingPlayer>k__BackingField: 0

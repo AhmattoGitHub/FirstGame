@@ -41,7 +41,7 @@ public class MeleeEnemyStateMachine : BaseStateMachine<MeleeEnemyState>
     {
         if(m_player != null)
         {
-            if(Mathf.Abs(m_player.transform.position.x - this.transform.position.x) <=3 )
+            if(Mathf.Abs(m_player.transform.position.x - this.transform.position.x) <=5 )
             {
                 ChasingPlayer = true;
             }

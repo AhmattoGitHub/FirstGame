@@ -25,6 +25,11 @@ public class ChasingState : MeleeEnemyState
     public override void OnFixedUpdate()
     {
         base.OnFixedUpdate();
+        m_meleeEnemyStateMachine.Rigidbody.transform.position = new Vector3
+            (Mathf.Lerp(m_meleeEnemyStateMachine.Rigidbody.transform.position.x
+            ,TestLevelManager.Instance.GetPlayer().transform.position.x, Time.fixedDeltaTime),
+            m_meleeEnemyStateMachine.Rigidbody.transform.position.y, 
+            m_meleeEnemyStateMachine.Rigidbody.transform.position.z);
     }
     public override void OnUpdate()
     {
