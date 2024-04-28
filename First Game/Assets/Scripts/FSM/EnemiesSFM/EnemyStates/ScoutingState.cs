@@ -11,6 +11,7 @@ public class ScoutingState : MeleeEnemyState
 
     private float m_timer = 0;
     private const float WAIT_TIME = 2f;
+    private float m_detectionRadius = 5f;
     public override bool CanEnter(IState currentState)
     {
         return true;
@@ -77,7 +78,7 @@ public class ScoutingState : MeleeEnemyState
 
     private void UpdateScoutingStatus()
     {
-        if (Mathf.Abs(m_meleeEnemyStateMachine.Rigidbody.transform.position.x - m_meleeEnemyStateMachine.StartingPosition.x) >= 5)
+        if (Mathf.Abs(m_meleeEnemyStateMachine.Rigidbody.transform.position.x - m_meleeEnemyStateMachine.StartingPosition.x) >= m_detectionRadius)
         {
             if (m_isScoutingLeft && (m_meleeEnemyStateMachine.Rigidbody.transform.position.x - m_meleeEnemyStateMachine.StartingPosition.x < 0))
             {
